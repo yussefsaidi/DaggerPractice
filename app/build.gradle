@@ -20,7 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
 }
 
 dependencies {
@@ -54,4 +57,21 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+
+    // Retrofit
+    def retrofit_version = "2.8.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // RxJava & RxAndroid
+    def rxjava_version = "3.0.3"
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    // RxJava Retrofit Adapter
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+
+    // Reactive Streams (convert Observable to LiveData)
+    def reactivestreams_version = "1.1.1"
+    implementation "android.arch.lifecycle:reactivestreams:$reactivestreams_version"
 }
