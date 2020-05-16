@@ -2,8 +2,10 @@ package com.yussefsaidi.daggerproject.di;
 
 import android.app.Application;
 import android.content.pm.ApplicationInfo;
+import android.se.omapi.Session;
 
 import com.yussefsaidi.daggerproject.BaseApplication;
+import com.yussefsaidi.daggerproject.SessionManager;
 
 import javax.inject.Singleton;
 
@@ -22,6 +24,8 @@ import dagger.android.support.AndroidSupportInjectionModule;
                 ViewModelFactoryModule.class,
         })
 public interface AppComponent extends AndroidInjector<BaseApplication> {
+
+    SessionManager sessionManager();
 
     @Component.Builder
     interface Builder{
