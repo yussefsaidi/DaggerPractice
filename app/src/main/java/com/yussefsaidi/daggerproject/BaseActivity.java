@@ -6,16 +6,12 @@ import android.os.PersistableBundle;
 import android.sax.StartElementListener;
 import android.util.Log;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
-
 import com.yussefsaidi.daggerproject.models.User;
 import com.yussefsaidi.daggerproject.ui.auth.AuthActivity;
 import com.yussefsaidi.daggerproject.ui.auth.AuthResource;
-
 import javax.inject.Inject;
-
 import dagger.android.support.DaggerAppCompatActivity;
 
 public abstract class BaseActivity extends DaggerAppCompatActivity {

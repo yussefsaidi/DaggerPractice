@@ -1,15 +1,11 @@
 package com.yussefsaidi.daggerproject;
 
-import android.provider.MediaStore;
 import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.Observer;
-
 import com.yussefsaidi.daggerproject.models.User;
 import com.yussefsaidi.daggerproject.ui.auth.AuthResource;
-
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -37,7 +33,7 @@ public class SessionManager {
         }
     }
 
-    private void logOut(){
+    public void logOut(){
         Log.d(TAG, "logOut: logging out...");
         cachedUser.setValue(AuthResource.logout());
     }

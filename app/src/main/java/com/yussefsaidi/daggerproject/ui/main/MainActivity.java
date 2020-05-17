@@ -22,9 +22,15 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         Toast.makeText(this, "MainActivity", Toast.LENGTH_SHORT).show();
 
-
+        testFragment();
     }
-    
+
+    private void testFragment(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_container, new ProfileFragment())
+                .commit();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

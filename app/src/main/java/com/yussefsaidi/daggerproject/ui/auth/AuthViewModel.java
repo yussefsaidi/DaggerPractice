@@ -8,7 +8,6 @@ import androidx.lifecycle.LiveDataReactiveStreams;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
-
 import com.yussefsaidi.daggerproject.SessionManager;
 import com.yussefsaidi.daggerproject.models.User;
 import com.yussefsaidi.daggerproject.network.auth.AuthApi;
