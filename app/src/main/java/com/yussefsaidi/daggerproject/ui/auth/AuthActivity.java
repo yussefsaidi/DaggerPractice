@@ -22,6 +22,7 @@ import com.yussefsaidi.daggerproject.ui.main.MainActivity;
 import com.yussefsaidi.daggerproject.viewmodels.ViewModelProviderFactory;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
@@ -43,6 +44,14 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     @Inject
     RequestManager requestManager;
 
+    @Inject
+    @Named("app_user")
+    User user1;
+
+    @Inject
+    @Named("auth_user")
+    User user2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +62,8 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
 
         viewModel = new ViewModelProvider(this, providerFactory).get(AuthViewModel.class);
         setLogo();
+        Log.d(TAG, "onCreate: app_user" + user1);
+        Log.d(TAG, "onCreate: auth_user" + user2);
 
         subscribeObservers();
     }

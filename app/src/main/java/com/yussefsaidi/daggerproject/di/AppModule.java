@@ -7,7 +7,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.yussefsaidi.daggerproject.R;
+import com.yussefsaidi.daggerproject.models.User;
 import com.yussefsaidi.daggerproject.util.Constants;
+
+import javax.inject.Named;
 import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
@@ -46,6 +49,13 @@ public class AppModule {
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+    }
+
+    @Singleton
+    @Provides
+    @Named("app_user")
+    User provideUser2(){
+        return new User();
     }
 
 }
